@@ -12,8 +12,44 @@
 
     <title>Payoo</title>
 </head>
-<body class="bg-stone-800 h-screen p-0">
-   <div
-   class="max-w-md  mx-auto  bg-white"> <h1 class="text-white">hi</h1></div>
+<body class="bg-stone-800 ">
+  <section class=" max-w-md h-screen   lg:h-auto bg-slate-300 mx-auto ">
+    <header class="max-w-md ">
+        <nav class="max-w-md  flex justify-center items-center  ">
+            <div class="mx-auto  relative top-5 ">
+                <img src="images/Rectangle 1.png" class=" max-w-screen-md mx-auto" alt="">
+                <img src="images/payoo.png " class=" max-w-6/12   absolute top-4 left-20 " alt="">
+            </div>
+        </nav>
+    </header>
+    <!-- loginhg form here  -->
+    <div class="hero relative -top-10 sm:-top-20 ">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Acount Number</span>
+                </label>
+                <input type="number" placeholder="Acount Number" class="input input-bordered" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">PIN Code</span>
+                </label>
+                <input type="text" placeholder="Enter PIN" class="input input-bordered" required />
+                <label class="label">
+                  <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                </label>
+              </div>
+              <div class="form-control mt-6 mx-auto">
+                <button class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </section>
 </body>
 </html>
