@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/payoo.png" type="image/x-icon">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <!-- daisy and Tailwind -->
+ <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <title>main</title>
 </head>
-<body>
-    <h1>hi bro </h1>
+<body class="container mx-auto min-h-screen bg-slate-300">
+    <section class="max-w-[97%] lg:max-w-[80%] mx-auto ">
+        <header class="py-4">
+            <nav class="flex justify-between items-center">
+               <div class="flex cursor-pointer">
+                <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
+                <div>
+                    <h1 class="font-bold text-2xl sm:text-3xl">$5667</h1>
+                    <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span class="text-blue-500">Blance</span> </p>
+                </div>
+               </div>
+               <button class="btn border-1 border-blue-500 p-4 text-[#666768] rounded-md"> <i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+            </nav>
+            <hr class="text-orange-600 mt-4 lg:hidden">
+        </header>
+    </section>
 </body>
 </html>
