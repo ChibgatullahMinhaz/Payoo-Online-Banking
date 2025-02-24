@@ -14,20 +14,59 @@
     <title>main</title>
 </head>
 <body class="container mx-auto min-h-screen bg-slate-300">
-    <section class="max-w-[97%] lg:max-w-[80%] mx-auto ">
-        <header class="py-4">
-            <nav class="flex justify-between items-center">
-               <div class="flex cursor-pointer">
-                <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
-                <div>
-                    <h1 class="font-bold text-2xl sm:text-3xl">$5667</h1>
-                    <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span class="text-blue-500">Blance</span> </p>
+    <header class="py-4 max-w-[97%] lg:max-w-[80%] mx-auto">
+        <nav class="flex justify-between items-center">
+           <div class="flex cursor-pointer">
+            <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
+            <div>
+                <h1 class="font-bold text-2xl sm:text-3xl">$5667</h1>
+                <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span class="text-blue-500">Blance</span> </p>
+            </div>
+           </div>
+           <button class="btn border-1 border-blue-500 p-4 text-[#666768] rounded-md"> <i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+        </nav>
+        <hr class="text-orange-600 mt-4 lg:hidden">
+    </header>
+
+    <main class="max-w-[97%] lg:max-w-[80%] mx-auto">
+         <!-- des -->
+         <div>
+            <h1 class="text-left text-3xl lg:text-5xl font-bold mt-8">🔥 Welcome to <span class="text-blue-500">Payooo!</span> </h1>
+            <p class="text-left mt-4 font-bold">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+         </div>
+         <!-- cards -->
+        <section class="max-w-[97%]  mx-auto">
+            <div class="cards grid grid-cols-2 lg:grid-cols-6 gap-3 mt-4">
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/wallet.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Add Money</h1>
                 </div>
-               </div>
-               <button class="btn border-1 border-blue-500 p-4 text-[#666768] rounded-md"> <i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-            </nav>
-            <hr class="text-orange-600 mt-4 lg:hidden">
-        </header>
-    </section>
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/send.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Cashout</h1>
+                </div>
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/money.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Transfer Money</h1>
+                </div>
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/financial.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Get Bonus</h1>
+                </div>
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/pay.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Pay Bill</h1>
+                </div>
+                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                    <img src="../images/add.png" class=" w-6 lg:w-8 " alt="">
+                    <h1>Transactions</h1>
+                </div>
+
+               
+
+            </div>
+        </section>
+    </main>
+   
 </body>
 </html>
