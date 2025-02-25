@@ -5,7 +5,7 @@ document.getElementById("btnlogin").addEventListener('click', (event)=>{
   console.log(acounNumber.length);
    if (acounNumber.length === 11 ) {
     if (acountPIN === 1234) {
-        window.location.href = '../view/main.html';
+        window.location.href = './view/main.html';
     }
     else{
         alert("tik nei ")
