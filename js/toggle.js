@@ -7,12 +7,12 @@ cardStatus('paybill');
 cardStatus('transiction');
 
 // close handle 
-addingEvent('AddmonyClose', 'addMoney', 'none');
-addingEvent('cashoutClose', 'cashout', 'none');
-addingEvent('TransferClose', 'Transfer', 'none');
-addingEvent('getbonusClose', 'getbonus', 'none');
-addingEvent('paybillClose', 'paybill', 'none');
-addingEvent('transictionClose', 'transiction', 'none');
+handleClose('cashoutClose', 'cashout', 'none');
+handleClose('AddmonyClose', 'addMoney', 'none');
+handleClose('TransferClose', 'Transfer', 'none');
+handleClose('getbonusClose', 'getbonus', 'none');
+handleClose('paybillClose', 'paybill', 'none');
+handleClose('transictionClose', 'transiction', 'none');
 
 // show card pupup
 cardPupup('addMonyCard-box','addMoney','block');
