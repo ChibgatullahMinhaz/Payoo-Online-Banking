@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/payoo.png" type="image/x-icon">
     <!-- fontawsome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
- <!-- daisy and Tailwind -->
- <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- daisy and Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <script src="../js/toggle.js" defer></script>
     <title>main</title>
 </head>
+
 <body class=" min-h-screen bg-slate-300">
     <header class="py-4 max-w-[97%] lg:max-w-[80%] mx-auto">
         <nav class="flex justify-between items-center">
-           <div class="flex cursor-pointer">
-            <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
-            <div>
-                <h1 class="font-bold text-2xl sm:text-3xl">$<span  id="blanceAmount" >5667</span> </h1>
-                <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span class="text-blue-500">Blance</span> </p>
+            <div class="flex cursor-pointer">
+                <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
+                <div>
+                    <h1 class="font-bold text-2xl sm:text-3xl">$<span id="blanceAmount">5667</span> </h1>
+                    <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span
+                            class="text-blue-500">Blance</span> </p>
+                </div>
             </div>
-           </div>
-           <button id="logoutbtn" class="btn border-1 border-blue-500 p-4 text-[#666768] rounded-md"> <i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+            <button id="logoutbtn" class="btn border-1 border-blue-500 p-4 text-[#666768] rounded-md"> <i
+                    class="fa-solid fa-right-from-bracket"></i> Log Out</button>
         </nav>
         <hr class="text-orange-600 mt-4 lg:hidden">
     </header>
 
     <main class="max-w-[97%] lg:max-w-[80%] mx-auto">
-         <!-- des -->
-         <div>
-            <h1 class="text-left text-3xl lg:text-5xl font-bold mt-8">🔥 Welcome to <span class="text-blue-500">Payooo!</span> </h1>
-            <p class="text-left mt-4 font-bold">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
-         </div>
-         <!-- cards -->
+        <!-- des -->
+        <div>
+            <h1 class="text-left text-3xl lg:text-5xl font-bold mt-8">🔥 Welcome to <span
+                    class="text-blue-500">Payooo!</span> </h1>
+            <p class="text-left mt-4 font-bold">Enjoy easy and convenient financial services with us. Cashout charge is
+                low and </p>
+        </div>
+        <!-- cards -->
         <section class="max-w-[97%]  mx-auto">
             <div class="cards grid grid-cols-2 lg:grid-cols-6 gap-3 mt-4">
-                <div id="addMonyCard" class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div id="addMonyCard"
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/wallet.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Add Money</h1>
                 </div>
-                <div id="cashOut" class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div id="cashOut"
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/send.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Cashout</h1>
                 </div>
-                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/money.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Transfer Money</h1>
                 </div>
-                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/financial.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Get Bonus</h1>
                 </div>
-                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/pay.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Pay Bill</h1>
                 </div>
-                <div class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
+                <div
+                    class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/add.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Transactions</h1>
                 </div>
@@ -65,88 +80,93 @@
             </div>
         </section>
 
-        <section id="moneyContainer" class="max-w-[97%]  mx-auto">
-               <!-- add money  -->
-               <div id="money" class="money">
+        <section id="moneyContainer" class="max-w-[97%] mx-auto">
+            <!-- add money  -->
+            <div id="addMoney" class="absolute top-50 left-0 right-0 lg:top-20">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        
+                        <p id="AddmonyClose" class="text-right btn">close</p>
                         <form class="card-body">
                             <legend>Select Bank</legend>
                             <select class="select select-bordered w-full max-w-xs label-text">
                                 <option disabled selected>Select Bank</option>
                                 <option value="Bkash">Bkash</option>
                                 <option value="Nogot">Nogot</option>
-                              </select>
-    
+                            </select>
+
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Acount Number</span>
                                 </label>
-                                <input value="12030103030" id="AcNumber" type="number" placeholder="Enter your 11 digit Number"
-                                    class="input input-bordered" required />
+                                <input value="12030103030" id="AcNumber" type="number"
+                                    placeholder="Enter your 11 digit Number" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input value="" id="addAmount" type="number" placeholder="Enter The Amount" class="input input-bordered"
-                                    required />
+                                <input value="" id="addAmount" type="number" placeholder="Enter The Amount"
+                                    class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">PIN</span>
                                 </label>
-                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN" class="input input-bordered"
-                                    required />
+                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
+                                    class="input input-bordered" required />
                             </div>
-                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Add Money</button>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Add
+                                Money</button>
                         </form>
                     </div>
                 </div>
             </div>
 
             <!-- cashout -->
-               <div id="cashOut" style="display: none;">
+            <div id="cashOut" style="display: none;">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        
+
                         <form class="card-body">
                             <legend>Select Bank</legend>
                             <select class="select select-bordered w-full max-w-xs label-text">
                                 <option disabled selected>Select Bank</option>
                                 <option value="Bkash">Bkash</option>
                                 <option value="Nogot">Nogot</option>
-                              </select>
-    
+                            </select>
+
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Acount Number</span>
                                 </label>
-                                <input value="12030103030" id="AcNumber" type="number" placeholder="Enter your 11 digit Number"
-                                    class="input input-bordered" required />
+                                <input value="12030103030" id="AcNumber" type="number"
+                                    placeholder="Enter your 11 digit Number" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input value="" id="addAmount" type="number" placeholder="Enter The Amount" class="input input-bordered"
-                                    required />
+                                <input value="" id="addAmount" type="number" placeholder="Enter The Amount"
+                                    class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">PIN</span>
                                 </label>
-                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN" class="input input-bordered"
-                                    required />
+                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
+                                    class="input input-bordered" required />
                             </div>
-                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">cash out</button>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">cash
+                                out</button>
                         </form>
                     </div>
                 </div>
             </div>
+
+
         </section>
     </main>
-   <script src="../js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>
