@@ -14,6 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <script src="../utilities/utilities.js" defer></script>
     <script src="../js/toggle.js" defer></script>
     <title>main</title>
 </head>
@@ -46,32 +47,32 @@
         <!-- cards -->
         <section class="max-w-[97%]  mx-auto">
             <div class="cards grid grid-cols-2 lg:grid-cols-6 gap-3 mt-4">
-                <div id="addMonyCard"
+                <div id="addMonyCard-box"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/wallet.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Add Money</h1>
                 </div>
-                <div id="cashOut"
+                <div id="cashOut-box"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/send.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Cashout</h1>
                 </div>
-                <div
+                <div id="TransferBox"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/money.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Transfer Money</h1>
                 </div>
-                <div
+                <div id="getBonus-box"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/financial.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Get Bonus</h1>
                 </div>
-                <div
+                <div id="paybill-box"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/pay.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Pay Bill</h1>
                 </div>
-                <div
+                <div id="Transactions-box"
                     class="card card flex flex-col items-center justify-center border cursor-pointer bg-gray-300 py-8 px-3">
                     <img src="../images/add.png" class=" w-6 lg:w-8 " alt="">
                     <h1>Transactions</h1>
@@ -82,10 +83,11 @@
 
         <section id="moneyContainer" class="max-w-[97%] mx-auto">
             <!-- add money  -->
-            <div id="addMoney" class="absolute top-50 left-0 right-0 lg:top-20">
+            <div id="addMoney" class="absolute top-30 left-0 right-0 lg:top-10">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <p id="AddmonyClose" class="text-right btn">close</p>
+                        <h1 class="text-2xl font-bold text-center mt-4">Add Money</h1>
                         <form class="card-body">
                             <legend>Select Bank</legend>
                             <select class="select select-bordered w-full max-w-xs label-text">
@@ -121,23 +123,50 @@
                     </div>
                 </div>
             </div>
-
-            <!-- cashout -->
-            <div id="cashOut" style="display: none;">
+            <!-- cashout money  -->
+            <div id="cashout" class="absolute top-50 left-0 right-0 lg:top-20">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-
+                        <p id="cashoutClose" class="text-right btn">close</p>
+                        <h1 class="text-2xl font-bold text-center mt-4">Cash Out</h1>
                         <form class="card-body">
-                            <legend>Select Bank</legend>
-                            <select class="select select-bordered w-full max-w-xs label-text">
-                                <option disabled selected>Select Bank</option>
-                                <option value="Bkash">Bkash</option>
-                                <option value="Nogot">Nogot</option>
-                            </select>
-
                             <div class="form-control">
                                 <label class="label">
-                                    <span class="label-text">Acount Number</span>
+                                    <span class="label-text">Agent Number</span>
+                                </label>
+                                <input value="12030103030" id="AcNumber" type="number"
+                                    placeholder="Enter your 11 digit Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Amount</span>
+                                </label>
+                                <input value="" id="addAmount" type="number" placeholder="Enter withdraw Amount"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin Number</span>
+                                </label>
+                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
+                                    class="input input-bordered" required />
+                            </div>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Withdraw Money</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tranfer money  -->
+            <div id="Transfer" class="absolute top-50 left-0 right-0 lg:top-20">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <p id="TransferClose" class="text-right btn">close</p>
+                        <h1 class="text-2xl font-bold text-center mt-4">Transfer Money</h1>
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">User Account Number</span>
                                 </label>
                                 <input value="12030103030" id="AcNumber" type="number"
                                     placeholder="Enter your 11 digit Number" class="input input-bordered" required />
@@ -151,17 +180,92 @@
                             </div>
                             <div class="form-control">
                                 <label class="label">
-                                    <span class="label-text">PIN</span>
+                                    <span class="label-text">Pin Number</span>
                                 </label>
                                 <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
                                     class="input input-bordered" required />
                             </div>
-                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">cash
-                                out</button>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Send Now</button>
                         </form>
                     </div>
                 </div>
             </div>
+            <!-- getbonus money  -->
+            <div id="getbonus" class="absolute top-50 left-0 right-0 lg:top-40">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <p id="getbonusClose" class="text-right btn">close</p>
+                        <h1 class="text-2xl font-bold text-center mt-4">Get Bonus</h1>
+
+                        <form class="card-body">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Enter Bonus Coupon</span>
+                                </label>
+                                <input id="AcountPIN" type="text" placeholder="Enter your coupon"
+                                    class="input input-bordered" required />
+                            </div>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Get Bonus</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- paybill money  -->
+            <div id="paybill" class="absolute top-30 left-0 right-0 lg:top-10">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <p id="paybillClose" class="text-right btn">close</p>
+                        <h1 class="text-2xl font-bold text-center mt-4">Pay Bill</h1>
+                        <form class="card-body">
+                            <legend>Select To Pay</legend>
+                            <select class="select select-bordered w-full max-w-xs label-text">
+                                <option disabled selected>Select Bank</option>
+                                <option value="Bkash">Bkash</option>
+                                <option value="Nogot">Nogot</option>
+                            </select>
+
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Biller Account Number</span>
+                                </label>
+                                <input value="12030103030" id="AcNumber" type="number"
+                                    placeholder="Enter your 11 digit Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Amount to Pay</span>
+                                </label>
+                                <input value="" id="addAmount" type="number" placeholder="Add Amount To Pay"
+                                    class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Pin Number</span>
+                                </label>
+                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
+                                    class="input input-bordered" required />
+                            </div>
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- transiction money  -->
+            <div id="transiction" class="absolute top-50 left-0 right-0 lg:top-20">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <p id="transictionClose" class="text-right btn">close</p>
+                        <form class="card-body">
+                        
+                            
+                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">comming Soone</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
 
 
         </section>

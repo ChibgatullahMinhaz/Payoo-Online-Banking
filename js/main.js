@@ -1,21 +1,23 @@
 // handle log-out 
 const logout = document.getElementById('logoutbtn');
-logout.addEventListener('click', (e)=>{
+logout.addEventListener('click', (e) => {
     window.location.href = '../index.html'
 })
 
-// add money  calculation
+// add money  calculation handle
 let blanceAmount = parseFloat(document.getElementById('blanceAmount').innerText);
-const addmoney = document.getElementById('addmoney');
-addmoney.addEventListener('click', (e) => {
+const addmoneyBtn = document.getElementById('addmoney');
+addmoneyBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    const Pin = parseFloat(document.getElementById('AcountPIN').value);
-    let addAmount = parseFloat(document.getElementById('addAmount').value);
-
-    addAmount && Pin  ? 
-    Pin === 1234 ? blanceAmount += addAmount : alert('Enter Valid PIN ')
-    : alert('Invalid Input');
-    document.getElementById('blanceAmount').innerText = blanceAmount; 
+    const PinField = document.getElementById('AcountPIN');
+    const AmountField = document.getElementById('addAmount');
+    const Pin = parseFloat(PinField.value);
+    let addAmount = parseFloat(AmountField.value);
+    addAmount && Pin
+        ? (Pin === 1234
+            ? (blanceAmount += addAmount, document.getElementById('blanceAmount').innerText = blanceAmount,  document.getElementById('addMoney').style.display = 'none'  )
+            : alert('Enter Valid PIN'))
+        : alert('Invalid User');
+    AmountField.value = "";
 });
 
-// cashOut calclation handle 

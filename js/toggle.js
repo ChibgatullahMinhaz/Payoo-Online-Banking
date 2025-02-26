@@ -1,23 +1,23 @@
-// // close handle 
-document.getElementById('addMoney').style.display = 'none'
-  
-function addmoneClose() {
-    document.getElementById('AddmonyClose').addEventListener('click', (e) => {
-        e.preventDefault();
-        const addmonyCard = document.getElementById('addMoney');
-    addmonyCard.style.display = 'none'   
-    });
-}
+// initial card value
+cardStatus('addMoney');
+cardStatus('cashout');
+cardStatus('getbonus');
+cardStatus('Transfer');
+cardStatus('paybill');
+cardStatus('transiction');
 
-// show add mooney form
-document.getElementById('addMonyCard').addEventListener('click', (e) => {
-    e.preventDefault();
-   const addmonyBtn= document.getElementById('addMoney');
-   addmonyBtn.style.display = 'block'
-})
+// close handle 
+addingEvent('AddmonyClose', 'addMoney', 'none');
+addingEvent('cashoutClose', 'cashout', 'none');
+addingEvent('TransferClose', 'Transfer', 'none');
+addingEvent('getbonusClose', 'getbonus', 'none');
+addingEvent('paybillClose', 'paybill', 'none');
+addingEvent('transictionClose', 'transiction', 'none');
 
-
-function init(){
-    addmoneClose()
-}
-init();
+// show card pupup
+cardPupup('addMonyCard-box','addMoney','block');
+cardPupup('cashOut-box','cashout','block');
+cardPupup('TransferBox','Transfer','block');
+cardPupup('getBonus-box','getbonus','block');
+cardPupup('paybill-box','paybill','block');
+cardPupup('Transactions-box','transiction','block');
