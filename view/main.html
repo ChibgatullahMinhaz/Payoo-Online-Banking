@@ -14,8 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <script src="../utilities/utilities.js" defer></script>
-    <script src="../js/toggle.js" defer></script>
+   
     <title>main</title>
 </head>
 
@@ -25,7 +24,7 @@
             <div class="flex cursor-pointer">
                 <img src="../images/Group.png" class=" w-14 sm:w-18" alt="">
                 <div>
-                    <h1 class="font-bold text-2xl sm:text-3xl">$<span id="blanceAmount">5667</span> </h1>
+                    <h1 class="font-bold text-2xl sm:text-3xl"><span id="blanceAmount">5600</span> Tk</h1>
                     <p class="p-1 rounded-md border-2 border-blue-500 text-orange-800">Available <span
                             class="text-blue-500">Blance</span> </p>
                 </div>
@@ -90,10 +89,11 @@
                         <h1 class="text-2xl font-bold text-center mt-4">Add Money</h1>
                         <form class="card-body">
                             <legend>Select Bank</legend>
-                            <select class="select select-bordered w-full max-w-xs label-text">
-                                <option disabled selected>Select Bank</option>
+                            <select id="addMoneyBank" class="select select-bordered w-full max-w-xs label-text">
+                                <option value="" disabled selected>Select Bank</option>
                                 <option value="Bkash">Bkash</option>
                                 <option value="Nogot">Nogot</option>
+                                <option value="DBBL">DBBL</option>
                             </select>
 
                             <div class="form-control">
@@ -134,24 +134,24 @@
                                 <label class="label">
                                     <span class="label-text">Agent Number</span>
                                 </label>
-                                <input value="12030103030" id="AcNumber" type="number"
+                                <input value="12030103030" id="AgentNumber" type="number"
                                     placeholder="Enter your 11 digit Number" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input value="" id="addAmount" type="number" placeholder="Enter withdraw Amount"
+                                <input value="" id="cashoutAmount" type="number" placeholder="Enter withdraw Amount"
                                     class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Pin Number</span>
                                 </label>
-                                <input value="1234" id="AcountPIN" type="number" placeholder="Enter your 4 digit PIN"
+                                <input value="1234" id="cashoutPin" type="number" placeholder="Enter your 4 digit PIN"
                                     class="input input-bordered" required />
                             </div>
-                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">Withdraw Money</button>
+                            <button id="cashoutBTN" type="submit" class="btn btn-primary w-full font-bold">Withdraw Money</button>
                         </form>
                     </div>
                 </div>
@@ -256,11 +256,10 @@
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <p id="transictionClose" class="text-right btn">close</p>
-                        <form class="card-body">
-                        
-                            
-                            <button id="addmoney" type="submit" class="btn btn-primary w-full font-bold">comming Soone</button>
-                        </form>
+                        <p class="text-blue-700 text-3xl font-bold text-center">Transiction History</p>
+
+                        <div id="transictionHistory" class="p-8 h-80 overflow-auto">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -270,7 +269,10 @@
 
         </section>
     </main>
+    <script src="../utilities/utilities.js" defer></script>
+    <script src="../js/toggle.js" defer></script>
     <script src="../js/main.js"></script>
+    <script src="../js/cashout.js"></script>
 </body>
 
 </html>

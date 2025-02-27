@@ -17,17 +17,30 @@ function cardPupup(boxId, cardId, status) {
         document.getElementById(cardId).style.display = status;
     });
 }
-
+// validate bank selected
+function validateSelectedBank(BankId) {
+    const SelectBank = document.getElementById(BankId).value;
+    if(SelectBank === ''){
+      alert('Select Bank');
+      return  false;
+    }
+    return SelectBank
+}
 // geting input, text feild and values
 const getFeildVlue = (id) => {
-    return document.getElementById(id).value;
+    const getValue =  document.getElementById(id).value;
+    return getValue;
 }
 const getFeild = (id) => {
-    const getValue = document.getElementById(id).value;
+    const getValue = document.getElementById(id);
     return getValue;
 }
 const getConvertedFeild = (id) => {
     const valueFeild = getFeildVlue(id);
     const convertValue = parseFloat(valueFeild);
     return convertValue;
+}
+
+function generateTransactionID() {
+    return 'TXN-' + Math.random().toString(36).substring(2, 10).toUpperCase();
 }
