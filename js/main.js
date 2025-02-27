@@ -37,7 +37,7 @@ function addMoneyCalculatin() {
         const div = document.createElement('div');
         div.classList.add("font-bold", "border", "p-4");
         div.innerHTML = `
-         <h1 class="text-violet-700">Transection History</h1>
+         <h1 class="text-violet-700">Add Money History</h1>
         <p>Trasnsiction ID :${TRNXID} </p>
         <p>Amount is: ${addAmount} Tk</p>
         <p>Added From ${Bank} Online Banking </p>
@@ -74,7 +74,19 @@ function cashOut() {
         const remainingBlance = mainBalance - (cashOutAmount + cashOutCharge);
         document.getElementById('blanceAmount').innerText = remainingBlance;
         document.getElementById('cashout').style.display = 'none';
-        getFeild('cashoutAmount').value = ""
+        getFeild('cashoutAmount').value = "";
+
+        const historyContaier = document.getElementById('transictionHistory');
+        const TRNXID =generateTransactionID();
+        const div = document.createElement('div');
+        div.classList.add("font-bold", "border", "p-4");
+        div.innerHTML = `
+         <h1 class="text-violet-700">Cash Out History</h1>
+        <p>Trasnsiction ID :${TRNXID} </p>
+        <p>Amount is: ${cashOutAmount + cashOutCharge} Tk</p>
+        <p>Agent Number: ${AgentNumber} </p>
+        `
+        historyContaier.appendChild(div)
     })
 }
 
