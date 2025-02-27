@@ -32,8 +32,8 @@ const getFeildVlue = (id) => {
     return getValue;
 }
 const getFeild = (id) => {
-    const getValue = document.getElementById(id);
-    return getValue;
+    const getFeild = document.getElementById(id);
+    return getFeild;
 }
 const getConvertedFeild = (id) => {
     const valueFeild = getFeildVlue(id);

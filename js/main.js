@@ -108,7 +108,7 @@ function PayBill() {
         }
         const remainingBlance = mainBalance - payAmount;
         document.getElementById('blanceAmount').innerText = remainingBlance;
-        document.getElementById('paybill').style.display = 'none';
+        getFeild('paybill').style.display = 'none';
         getFeild('payAmount').value = "";
 
         // make history
@@ -125,9 +125,81 @@ function PayBill() {
         historyContaier.appendChild(div)
     })
 }
+// get bonus 
+function GetBonus() {
+    document.getElementById('coponBtn').addEventListener('click', (event) => {
+        event.preventDefault();
+        const copon = getFeildVlue('coponCode');
+        const bonusAmount = 10;
+        if (!copon || copon < 0) {
+            return alert('invalid Input')
+        }
+        if (copon === copon) {
+            const presentBlance = mainBalance + bonusAmount;
+            document.getElementById('blanceAmount').innerText = presentBlance;
+            getFeild('getbonus').style.display = 'none';
+            getFeild('coponCode').value = '';
+            alert('Wow! You Get 10 Tk Bonus')
+        }
+
+        // make history
+        const historyContaier = document.getElementById('transictionHistory');
+        const TRNXID = generateTransactionID();
+        const div = document.createElement('div');
+        div.classList.add("font-bold", "border", "p-4");
+        div.innerHTML = `
+         <h1 class="text-violet-700">Get Bonus History</h1>
+        <p>Trasnsiction ID :${TRNXID} </p>
+        <p>Bonus Amount is: ${bonusAmount} Tk</p>
+        <p>Copun Code Is: ${copon} </p>
+        `
+        historyContaier.appendChild(div)
+    })
+
+}
+// transfer money 
+function TransferMoney() {
+    document.getElementById('transferBtn').addEventListener('click', (e) => {
+        e.preventDefault();
+        const userAcNmber = getFeildVlue('userAcNumber');
+        const TransfMoney = getConvertedFeild('transAmount');
+        const TransferPin = getConvertedFeild('TransferPin');
+
+        if (userAcNmber.length !== 11) {
+            return alert('Invalid User')
+        }
+        if (TransferPin !== 1234) {
+            return alert('Invalid PIN')
+        }
+        if (!TransfMoney || TransfMoney < 0 ) {
+        return alert('Enter A valid Amount')
+        }
+
+        const remainingBlance = mainBalance - TransfMoney;
+        document.getElementById('blanceAmount').innerText = remainingBlance;
+        getFeild('Transfer').style.display = 'none';
+        getFeild('transAmount').value = '';
+
+        
+        // make history
+        const historyContaier = document.getElementById('transictionHistory');
+        const TRNXID = generateTransactionID();
+        const div = document.createElement('div');
+        div.classList.add("font-bold", "border", "p-4");
+        div.innerHTML = `
+         <h1 class="text-violet-700">Transfer History</h1>
+        <p>Trasnsiction ID :${TRNXID} </p>
+        <p>Transfer Amount is: ${TransfMoney} Tk</p>
+        <p>Transfer Number Is: ${userAcNmber} </p>
+        `
+        historyContaier.appendChild(div)
+    })
+}
 function init() {
     addMoneyCalculatin();
-    cashOut()
-    PayBill()
+    cashOut();
+    PayBill();
+    GetBonus();
+    TransferMoney();
 }
 init();
