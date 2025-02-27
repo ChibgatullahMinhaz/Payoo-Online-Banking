@@ -40,7 +40,7 @@ const getConvertedFeild = (id) => {
     const convertValue = parseFloat(valueFeild);
     return convertValue;
 }
-
+// transection id 
 function generateTransactionID() {
     return 'TXN-' + Math.random().toString(36).substring(2, 10).toUpperCase();
 }

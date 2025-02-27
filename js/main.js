@@ -33,7 +33,7 @@ function addMoneyCalculatin() {
 
         // make history
         const historyContaier = document.getElementById('transictionHistory');
-        const TRNXID =generateTransactionID();
+        const TRNXID = generateTransactionID();
         const div = document.createElement('div');
         div.classList.add("font-bold", "border", "p-4");
         div.innerHTML = `
@@ -47,7 +47,7 @@ function addMoneyCalculatin() {
     });
 
 }
-
+// cashout 
 function cashOut() {
     const cashOutbtn = document.getElementById('cashoutBTN');
     cashOutbtn.addEventListener('click', (e) => {
@@ -75,9 +75,9 @@ function cashOut() {
         document.getElementById('blanceAmount').innerText = remainingBlance;
         document.getElementById('cashout').style.display = 'none';
         getFeild('cashoutAmount').value = "";
-
+        // make history
         const historyContaier = document.getElementById('transictionHistory');
-        const TRNXID =generateTransactionID();
+        const TRNXID = generateTransactionID();
         const div = document.createElement('div');
         div.classList.add("font-bold", "border", "p-4");
         div.innerHTML = `
@@ -89,9 +89,45 @@ function cashOut() {
         historyContaier.appendChild(div)
     })
 }
+// biller 
+function PayBill() {
+    document.getElementById('billerBtn').addEventListener('click', (e) => {
+        e.preventDefault()
+        const Bank = validateSelectedBank('billerBank');
+        const billerNumber = getFeildVlue('billerNumber');
+        const Pin = getConvertedFeild('payPin');
+        const payAmount = getConvertedFeild('payAmount')
+        if (billerNumber.length !== 11) {
+            return alert('Invalid User')
+        }
+        if (Pin !== 1234) {
+            return alert('Invalid PIN')
+        }
+        if (!payAmount || payAmount <= 0) {
+            return alert('Invalid Amount')
+        }
+        const remainingBlance = mainBalance - payAmount;
+        document.getElementById('blanceAmount').innerText = remainingBlance;
+        document.getElementById('paybill').style.display = 'none';
+        getFeild('payAmount').value = "";
 
+        // make history
+        const historyContaier = document.getElementById('transictionHistory');
+        const TRNXID = generateTransactionID();
+        const div = document.createElement('div');
+        div.classList.add("font-bold", "border", "p-4");
+        div.innerHTML = `
+         <h1 class="text-violet-700">Biller History</h1>
+        <p>Trasnsiction ID :${TRNXID} </p>
+        <p>Biller Amount is: ${payAmount} Tk</p>
+        <p>biller Number: ${billerNumber} </p>
+        `
+        historyContaier.appendChild(div)
+    })
+}
 function init() {
     addMoneyCalculatin();
     cashOut()
+    PayBill()
 }
 init();
